@@ -28,16 +28,15 @@ public class MainActivity extends AppCompatActivity {
                 //1m 39.370m
                 double multiplier = 39.37;
                 double result = 00.00;
-
-                if(enterMeters.getText().toString().equals(""))
-                {
-                 resultTextView.setText(R.string.error_message);
-                 resultTextView.setTextColor(Color.RED);
-                }
-                else {
+                if (enterMeters.getText().toString().equals("")) {
+                    resultTextView.setText(R.string.error_message);
+                    resultTextView.setTextColor(Color.RED);
+                } else {
                     double meterValue = Double.parseDouble(enterMeters.getText().toString());
                     result = meterValue * multiplier;
-                    resultTextView.setText(Double.toString(result));
+//                    resultTextView.setText(Double.toString(result));
+                    resultTextView.setTextColor(Color.DKGRAY);
+                    resultTextView.setText(String.format("%.3f", result) + " Inches");
                 }
             }
         });
